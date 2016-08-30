@@ -34,7 +34,7 @@
 
 - (instancetype)init{
 
-    self = [super init];
+    self = [super initWithCollectionViewLayout:[[RPSlidingMenuLayout alloc] init]];
 
     if (self){
         _featureHeight = RPSlidingCellFeatureHeight;
@@ -58,7 +58,8 @@ static NSString *RPSlidingCellIdentifier = @"RPSlidingCellIdentifier";
     
     [super viewDidLoad];
 
-    self.collectionView.collectionViewLayout = [[RPSlidingMenuLayout alloc] initWithDelegate:self];
+    RPSlidingMenuLayout* layout = (RPSlidingMenuLayout *)self.collectionView.collectionViewLayout;
+    layout.delegate = self;
 
     [self.collectionView registerClass:[RPSlidingMenuCell class] forCellWithReuseIdentifier:RPSlidingCellIdentifier];
     self.navigationController.navigationBarHidden = YES;
