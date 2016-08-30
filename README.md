@@ -1,7 +1,7 @@
 RPSlidingMenu
 =============
 
-A collection view menu in the style of UltraVisual.
+A collection view menu in the style of UltraVisual. This fork adds slight fixes for swift and includes a swift example
 
 
 ![RPSlidingMenu animated GIF](http://f.cl.ly/items/1P0l1X0D0b2k1C3T2C2o/2014-03-14%2011_39_36.gif)
@@ -52,6 +52,31 @@ Override the following methods:
                                           otherButtonTitles:nil];
     [alert show];
 }
+```
+
+##Swift Example
+
+Bridging header:
+
+```objc
+#import <UIKit/UIKit.h>
+#import "RPSlidingMenu.h"
+```
+
+View Controller:
+
+```swift
+
+override func numberOfItemsInSlidingMenu() -> Int {
+    return 10
+}
+    
+override func customizeCell(slidingMenuCell: RPSlidingMenuCell!, forRow row: Int) {
+    slidingMenuCell.textLabel.text = "Some Title"
+    slidingMenuCell.detailTextLabel.text = "Some longer description that is like a subtitle!"
+    slidingMenuCell.backgroundImageView.image = UIImage(named: "image")
+}
+
 ```
 
 ##Notes
