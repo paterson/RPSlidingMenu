@@ -40,8 +40,6 @@ extern const CGFloat RPSlidingCellDragInterval;
  */
 @interface RPSlidingMenuLayout : UICollectionViewLayout
 
-- (instancetype)initWithDelegate:(id<RPSlidingMenuLayoutDelegate>)delegate;
-
 @property (nonatomic, assign) id <RPSlidingMenuLayoutDelegate> delegate;
 
 @end
