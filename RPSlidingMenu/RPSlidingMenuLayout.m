@@ -35,16 +35,6 @@ const CGFloat RPSlidingCellDragInterval = 180.0f;
 
 @implementation RPSlidingMenuLayout
 
-- (instancetype)initWithDelegate:(id<RPSlidingMenuLayoutDelegate>)delegate {
-    
-    self = [super init];
-    if (self){
-        _delegate = delegate;
-    }
-
-    return self;
-}
-
 - (void)prepareLayout {
 
     [super prepareLayout];
